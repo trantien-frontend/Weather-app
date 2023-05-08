@@ -1,0 +1,17 @@
+footer {
+	padding: 2.5rem 0;
+	text-align: center;
+
+	p:nth-child(1) {
+		margin-bottom: 10px;
+	}
+
+	p:nth-child(2) {
+		letter-spacing: 0.5px;
+	}
+	& * {
+		font-size: 1.4rem;
+		font-weight: 400;
+		color: var(--color-thrid);
+	}
+}

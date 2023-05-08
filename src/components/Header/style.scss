@@ -1,0 +1,55 @@
+@import '../../assets/style/mixin.scss';
+
+@keyframes showMobileForm {
+	0% {
+	}
+	100% {
+		z-index: 99999;
+	}
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 0;
+
+	.logo {
+		width: 15rem;
+
+		@include respond-to(medium) {
+			width: 17rem;
+		}
+	}
+
+	.button {
+		border: none;
+		border-radius: 50%;
+
+		cursor: pointer;
+
+		width: 3.5rem;
+		height: 3.5rem;
+		line-height: 3.5rem;
+
+		background-color: var(--color-secondary);
+
+		span {
+			font-size: 1.3rem;
+			color: #fff;
+		}
+
+		&--primary {
+			background-color: rgb(169, 146, 213);
+			color: #222222;
+
+			span {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	@include respond-to('small') {
+		padding: 2.5rem 0;
+	}
+}

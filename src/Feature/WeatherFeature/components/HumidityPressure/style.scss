@@ -1,0 +1,51 @@
+@import '../../../../assets/style/mixin.scss';
+
+.humidity-pressure {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 -10px;
+
+	& > div {
+		flex-basis: 100%;
+		padding: 0 10px;
+
+		&:first-child {
+			margin-bottom: 1.5rem;
+		}
+
+		@include respond-to(extraSmall) {
+			flex-basis: 50%;
+			&:first-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+	&__item {
+		@include box-secondary;
+
+		& > h5 {
+			@include sub-title;
+		}
+
+		& div {
+			span {
+				@include text-style-1;
+			}
+
+			p {
+				@include text-style-1;
+
+				span {
+					font-size: 15px;
+				}
+			}
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+	}
+}

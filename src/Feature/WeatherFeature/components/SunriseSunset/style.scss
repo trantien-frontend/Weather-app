@@ -1,0 +1,57 @@
+@import '../../../../assets/style/mixin.scss';
+
+@mixin sunriseSunSetImage {
+	width: 3rem;
+
+	@include respond-to('smaller') {
+		width: 4rem;
+	}
+}
+@mixin sunriseSunSetBox {
+	flex-basis: 50%;
+
+	display: flex;
+	align-items: center;
+
+	div:nth-child(2) {
+		padding-left: 10px;
+	}
+
+	div:nth-child(2) span {
+		display: block;
+	}
+
+	div:nth-child(2) span:nth-child(1) {
+		color: var(--color-thrid);
+		font-size: 1.3rem;
+	}
+
+	div:nth-child(2) span:nth-child(2) {
+		@include text-style-1;
+	}
+}
+.sunrise-sunset {
+	@include box-secondary;
+
+	& > div {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.sunrise {
+		@include sunriseSunSetBox;
+
+		&-img {
+			@include sunriseSunSetImage();
+		}
+	}
+
+	.sunset {
+		@include sunriseSunSetBox;
+
+		&-img {
+			@include sunriseSunSetImage();
+		}
+	}
+}

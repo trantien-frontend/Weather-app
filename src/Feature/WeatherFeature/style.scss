@@ -1,0 +1,71 @@
+@import '../../assets/style/mixin.scss';
+
+.container {
+	padding: 15px;
+	margin: 0 auto;
+	overflow: hidden;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	@include respond-to(smaller) {
+		max-width: 576px;
+	}
+
+	@include respond-to(small) {
+		max-width: none;
+	}
+
+	@include respond-to(medium) {
+		max-width: none;
+	}
+
+	@include respond-to(gteMedium) {
+		max-width: 1140px;
+	}
+
+	@include respond-to(large) {
+		max-width: 1300px;
+	}
+}
+
+.main-content {
+	margin: 0 -15px;
+
+	@include respond-to('small') {
+		display: flex;
+	}
+}
+
+.main-left {
+	padding: 0 15px;
+	margin-bottom: 2rem;
+
+	@include respond-to('small') {
+		width: 30rem;
+		margin-bottom: 0px;
+	}
+
+	@include respond-to('gteMedium') {
+		width: 35rem;
+	}
+}
+
+.main-right {
+	padding: 0 15px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	@include respond-to('small') {
+		flex: 1 1 0;
+
+		max-height: 65rem;
+	}
+
+	@include respond-to('large') {
+		flex: 1 1 0;
+
+		max-height: none;
+	}
+}

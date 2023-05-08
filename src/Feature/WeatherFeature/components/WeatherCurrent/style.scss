@@ -1,0 +1,187 @@
+@import '../../../../assets/style/mixin.scss';
+
+.weather-now {
+	@include box;
+
+	& > h6 {
+		font-size: 1.5rem;
+		font-weight: 400;
+
+		@include respond-to('smaller') {
+			font-size: 1.6rem;
+		}
+
+		@include respond-to('large') {
+			font-size: 1.8rem;
+		}
+	}
+
+	& .weather-now__temp {
+		margin-top: -1rem;
+		display: flex;
+		align-items: center;
+
+		@include respond-to('medium') {
+			margin-top: -1.8rem;
+		}
+
+		& > h5 {
+			font-size: 3.4rem;
+			font-weight: 400;
+			flex-basis: 40%;
+
+			color: #fff;
+
+			& sup {
+				font-size: 1.5rem;
+				padding-left: 2px;
+			}
+
+			@include respond-to('extraSmall') {
+				font-size: 4rem;
+
+				& sup {
+					font-size: 1.8rem;
+				}
+			}
+
+			@include respond-to('smaller') {
+				font-size: 5rem;
+
+				& sup {
+					font-size: 2rem;
+				}
+			}
+
+			@include respond-to('small') {
+				font-size: 4rem;
+			}
+
+			@include respond-to('medium') {
+				font-size: 7.5rem;
+			}
+
+			@include respond-to('gteMedium') {
+				font-size: 10rem;
+			}
+		}
+
+		& > div {
+			flex-basis: 60%;
+			text-align: right;
+
+			& img {
+				display: inline-block;
+				width: 8rem;
+				text-align: right;
+			}
+
+			@include respond-to('extraSmall') {
+				text-align: center;
+			}
+
+			@include respond-to('smaller') {
+				img {
+					width: 10rem;
+				}
+			}
+
+			@include respond-to('small') {
+				img {
+					width: 8rem;
+				}
+			}
+
+			@include respond-to('medium') {
+				img {
+					width: 12rem;
+				}
+			}
+
+			@include respond-to('large') {
+				img {
+					width: 14rem;
+				}
+			}
+		}
+	}
+
+	& .weather-now-dsc {
+		font-size: 1.2rem;
+		font-weight: 400;
+		letter-spacing: 0.5px;
+		text-transform: capitalize;
+
+		margin-top: -1.5rem;
+		margin-bottom: 10px;
+
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgba(128, 128, 128, 0.401);
+
+		@include respond-to('smaller') {
+			font-size: 1.5rem;
+
+			margin-bottom: 12px;
+			padding-bottom: 12px;
+		}
+
+		@include respond-to('small') {
+			font-size: 1.3rem;
+
+			margin-bottom: 12px;
+			padding-bottom: 12px;
+		}
+
+		@include respond-to('medium') {
+			margin-top: -2rem;
+		}
+	}
+
+	& .weather-now__information {
+		& p {
+			font-size: 1.2rem;
+			font-weight: 400;
+			color: var(--color-thrid);
+
+			& span {
+				display: inline-block;
+				padding-right: 8px;
+				color: #fff;
+				font-size: 1.3rem;
+			}
+		}
+
+		p:nth-child(1) {
+			padding-bottom: 5px;
+		}
+
+		@include respond-to('smaller') {
+			p {
+				font-size: 1.4rem;
+
+				span {
+					font-size: 1.6rem;
+				}
+			}
+
+			p:nth-child(1) {
+				padding-bottom: 8px;
+			}
+		}
+
+		@include respond-to('small') {
+			p {
+				font-size: 1.2rem;
+
+				span {
+					font-size: 1.5rem;
+				}
+			}
+		}
+
+		@include respond-to('medium') {
+			p {
+			}
+		}
+	}
+}

@@ -1,0 +1,140 @@
+@import './variable.scss';
+
+@mixin box {
+	padding: 2rem 1.6rem;
+	border-radius: 2rem;
+	background-color: var(--color-secondary);
+}
+
+@mixin box-secondary {
+	@include box;
+	background-color: var(--color-primary);
+}
+
+@mixin grid-container {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+
+	margin: 0 -15px;
+}
+
+@mixin box-third {
+	@include box-secondary;
+
+	& > span {
+		@include sub-title;
+	}
+
+	& > div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: 15px 0;
+
+		& > span {
+			font-size: 2.5rem;
+		}
+
+		p {
+			font-size: 2.5rem;
+
+			& > span {
+				font-size: 2rem;
+				padding-left: 4px;
+			}
+		}
+	}
+}
+
+@mixin respond-to($breakpoint) {
+	@if $breakpoint == 'extraSmall' {
+		@media (min-width: 380px) {
+			@content;
+		} //600px
+	}
+
+	@if $breakpoint == 'smaller' {
+		@media (min-width: 576px) {
+			@content;
+		} //900px
+	}
+
+	@if $breakpoint == 'small' {
+		@media (min-width: 768px) {
+			@content;
+		} //1200px
+	}
+
+	@if $breakpoint == 'medium' {
+		@media (min-width: 992px) {
+			@content;
+		} //1800px
+	}
+
+	@if $breakpoint == 'gteMedium' {
+		@media (min-width: 1140px) {
+			@content;
+		} //1800px
+	}
+
+	@if $breakpoint == 'large' {
+		@media (min-width: 1300px) {
+			@content;
+		} //1800px
+	}
+}
+
+@mixin title {
+	font-size: 2rem;
+	font-weight: 400;
+	text-transform: capitalize;
+
+	margin: 10px;
+}
+
+@mixin sub-title {
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-transform: capitalize;
+
+	color: var(--color-thrid);
+
+	margin-bottom: 10px;
+
+	@include respond-to('small') {
+		font-size: 1.6rem;
+		margin-bottom: 1.5rem;
+	}
+}
+
+@mixin text-style-1 {
+	font-size: 2rem;
+
+	@include respond-to('smaller') {
+		font-size: 2.6rem;
+	}
+
+	@include respond-to('small') {
+		font-size: 2rem;
+	}
+
+	@include respond-to('medium') {
+		font-size: 3rem;
+	}
+
+	@include respond-to('large') {
+		font-size: 2.2rem;
+	}
+}
+
+@mixin text-style-2 {
+	font-size: 1.3rem;
+	font-weight: 400;
+	color: var(--color-thrid);
+
+	@include respond-to(small) {
+		font-size: 1.3rem;
+	}
+}

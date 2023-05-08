@@ -1,0 +1,26 @@
+@import '../../../../assets/style/mixin.scss';
+
+.todays-hight-light {
+	@include box;
+	&-title {
+		@include title;
+	}
+
+	&__content > div {
+		margin-bottom: 1.5rem;
+	}
+
+	@include respond-to('large') {
+		&__content {
+			display: flex;
+			flex-wrap: wrap;
+
+			margin: 0 -15px;
+
+			& > div {
+				flex-basis: 50%;
+				padding: 0 15px;
+			}
+		}
+	}
+}

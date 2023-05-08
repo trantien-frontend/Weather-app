@@ -1,0 +1,95 @@
+@import '../../../../assets/style/mixin.scss';
+
+h4 {
+	@include title;
+}
+
+.five-days-forecast {
+	@include box;
+
+	& ul li {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-left: -15px;
+
+		& .five-days-forecast__item:first-child {
+			flex-basis: 40%;
+
+			// @include respond-to('small') {
+			// 	flex-basis: 30%;
+			// }
+
+			@include respond-to('medium') {
+				flex-basis: 50%;
+			}
+		}
+
+		& .five-days-forecast__item:nth-child(2),
+		:nth-child(3) {
+			flex-basis: 30%;
+
+			@include respond-to('extraSmall') {
+				flex-basis: 25%;
+			}
+
+			@include respond-to('small') {
+				flex-basis: 30%;
+			}
+		}
+
+		& div:first-child {
+			display: flex;
+			align-items: center;
+
+			& .img {
+				width: 4rem;
+
+				@include respond-to('extraSmall') {
+					width: 7rem;
+				}
+
+				@include respond-to('small') {
+					width: 5rem;
+				}
+			}
+
+			& p {
+				font-size: 1.3rem;
+				color: var(--color-blur-white);
+
+				@include respond-to('extraSmall') {
+					font-size: 1.8rem;
+					margin-left: -5px;
+				}
+
+				@include respond-to('extraSmall') {
+					font-size: 1.6rem;
+					margin-left: 0px;
+				}
+			}
+		}
+
+		& div:nth-child(2),
+		:last-child {
+			text-align: center;
+
+			span {
+				display: inline-block;
+
+				font-size: 1rem;
+
+				color: var(--color-thrid);
+				padding-left: 5px;
+
+				@include respond-to('extraSmall') {
+					font-size: 1.3rem;
+				}
+
+				@include respond-to('extraSmall') {
+					font-size: 1.1rem;
+				}
+			}
+		}
+	}
+}

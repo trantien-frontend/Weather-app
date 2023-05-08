@@ -1,0 +1,80 @@
+@import '../../../../assets/style/mixin.scss';
+
+h5 {
+	@include sub-title;
+}
+
+.air-quality {
+	@include box-secondary;
+
+	&__content {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		// icon
+		.air-icon {
+			flex-basis: 20%;
+
+			span {
+				font-size: 3rem;
+			}
+
+			@include respond-to(smaller) {
+				span {
+					font-size: 3.5rem;
+				}
+			}
+
+			@include respond-to(small) {
+				flex-basis: 20%;
+			}
+		}
+
+		// value
+		.air-parameter {
+			flex-basis: 80%;
+
+			@include respond-to(small) {
+				flex-basis: 80%;
+			}
+
+			& > div {
+				display: flex;
+				flex-wrap: wrap;
+
+				& > div {
+					flex-basis: 50%;
+					text-align: center;
+
+					span:nth-child(1) {
+						@include text-style-1;
+					}
+
+					span:nth-child(2) {
+						@include text-style-2;
+						text-transform: uppercase;
+
+						padding-left: 5px;
+					}
+				}
+
+				@include respond-to('smaller') {
+					& > div:nth-child(even) {
+						text-align: center;
+					}
+				}
+
+				@include respond-to(small) {
+					& > div {
+						flex-basis: calc(100% / 4);
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						flex-direction: column-reverse;
+					}
+				}
+			}
+		}
+	}
+}

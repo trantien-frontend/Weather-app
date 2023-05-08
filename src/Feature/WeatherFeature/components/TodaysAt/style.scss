@@ -1,0 +1,33 @@
+@import '../../../../assets/style/mixin.scss';
+
+.today-temp-list {
+	& > div {
+		display: flex;
+		align-items: center;
+		margin: 0 -10px;
+
+		overflow: auto;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		& .today-temp-list__item {
+			min-width: 120px;
+
+			background-color: var(--color-secondary);
+			margin: 0 10px;
+			border-radius: 10px;
+			text-align: center;
+
+			& > div {
+				padding: 10px;
+			}
+
+			@include respond-to(large) {
+				min-width: auto;
+				flex-basis: calc(100% / 8);
+			}
+		}
+	}
+}
