@@ -1,5 +1,5 @@
 import axiosClient from './axiosClient';
-const URL_GEOCODING = 'http://api.openweathermap.org/geo/1.0';
+const URL_GEOCODING = 'https://api.openweathermap.org/geo/1.0';
 
 const weatherApis = {
 	getWeatherCurrent(params) {
